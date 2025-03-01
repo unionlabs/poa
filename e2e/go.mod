@@ -5,11 +5,11 @@ go 1.21
 toolchain go1.21.0
 
 replace (
-	cosmossdk.io/core => cosmossdk.io/core v0.11.0
+	// cosmossdk.io/core => cosmossdk.io/core v0.11.0
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
 	github.com/ChainSafe/go-schnorrkel/1 => github.com/ChainSafe/go-schnorrkel v1.0.0
 
-	github.com/cosmos/cosmos-sdk => github.com/rollchains/cosmos-sdk v0.50.8
+	// github.com/cosmos/cosmos-sdk => github.com/rollchains/cosmos-sdk v0.50.8
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 
 	// breaks SDK app.toml parsing in ictest.
@@ -268,4 +268,21 @@ require (
 	nhooyr.io/websocket v1.8.10 // indirect
 	pgregory.net/rapid v1.1.0 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
+)
+
+replace (
+	cosmossdk.io/core => github.com/unionlabs/cosmos-sdk/core v0.0.0-20250228163659-0f0e36772bd6
+	cosmossdk.io/store => github.com/unionlabs/cosmos-sdk/store v0.0.0-20250228163659-0f0e36772bd6
+	cosmossdk.io/x/circuit => github.com/unionlabs/cosmos-sdk/x/circuit v0.0.0-20250228163659-0f0e36772bd6
+	cosmossdk.io/x/evidence => github.com/unionlabs/cosmos-sdk/x/evidence v0.0.0-20250228163659-0f0e36772bd6
+	cosmossdk.io/x/feegrant => github.com/unionlabs/cosmos-sdk/x/feegrant v0.0.0-20250228163659-0f0e36772bd6
+	cosmossdk.io/x/nft => github.com/unionlabs/cosmos-sdk/x/nft v0.0.0-20250228163659-0f0e36772bd6
+	github.com/cosmos/cosmos-sdk => github.com/unionlabs/cosmos-sdk v0.0.0-20250228163659-0f0e36772bd6
+)
+
+replace (
+	github.com/cometbft/cometbft => github.com/unionlabs/cometbls v0.0.0-20250228223008-5aa5a57b377d
+	github.com/cometbft/cometbft/api => github.com/unionlabs/cometbls/api v0.0.0-20250228223008-5aa5a57b377d
+	github.com/consensys/gnark-crypto => github.com/unionlabs/gnark-crypto v0.0.0-20231016072529-15c0507b6578
+	github.com/tunabay/go-bitarray => github.com/poisonphang/go-bitarray v0.0.0-20240912214703-d6127bb4d1bd
 )

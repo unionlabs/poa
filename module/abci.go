@@ -75,7 +75,7 @@ func (am AppModule) BeginBlocker(ctx context.Context) error {
 	am.keeper.Logger().Info("BeginBlocker events:\n")
 	for _, e := range events {
 		e := e
-		am.keeper.Logger().Info(fmt.Sprintf("PubKey: %s, Power: %d", &e.PubKey, e.Power))
+		am.keeper.Logger().Info(fmt.Sprintf("PubKey: %s, Power: %d", &e.PubKeyBytes, e.Power))
 	}
 	am.keeper.Logger().Info("\n")
 
