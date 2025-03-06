@@ -2,6 +2,7 @@ package module
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
@@ -75,7 +76,7 @@ func (am AppModule) BeginBlocker(ctx context.Context) error {
 	am.keeper.Logger().Info("BeginBlocker events:\n")
 	for _, e := range events {
 		e := e
-		am.keeper.Logger().Info(fmt.Sprintf("PubKey: %s, Power: %d", e.PubKeyBytes, e.Power))
+		am.keeper.Logger().Info(fmt.Sprintf("PubKey: %s, Power: %d", base64.StdEncoding.EncodeToString(e.PubKeyBytes), e.Power))
 	}
 	am.keeper.Logger().Info("\n")
 
